@@ -65,7 +65,7 @@
         <!-- Ảnh đại diện: dùng placeholder, thay bằng ảnh thật của bạn -->
         <figure class="hero-avatar">
           <img
-            src="./assets/img/avatar.jpg"
+            src="assets/img/avatar.jpg"
             alt="Ảnh đại diện của Trương Nhất Sơn"
             width="320" height="320" />
         </figure>
@@ -177,15 +177,152 @@
       <div class="container contact-inner">
         <h2 class="section-title">Liên hệ</h2>
         <p class="section-sub">Mở cho các cơ hội thực tập &amp; việc làm Frontend.</p>
-
         <ul class="contact-list">
           <li><span class="contact-label">Email</span> <a href="mailto:truongnhatson2228@gmail.com">truongnhatson2228@gmail.com</a></li>
           <li><span class="contact-label">GitHub</span> <a href="https://github.com/truongnhatson2228">github.com/truongnhatson2228</a></li>
           <li><span class="contact-label">LinkedIn</span> <a href="https://linkedin.com/in/tru">linkedin.com/in/truongnhatson</a></li>
         </ul>
-      </div>
-    </section>
+        <style>
+          input:focus {
+            background-color: rgb(127, 220, 246);
+            border: 3px solid rgb(82, 160, 233);
+            outline: none;
+          }
+        </style>
+        <form>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .signin-box {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 420px;
+        }
 
+        .signin-box h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #222;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 40px 12px 12px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            border-bottom-color: #4ecdc4;
+        }
+
+        .input-group .icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 18px;
+        }
+
+        .signin-btn {
+            width: 100%;
+            padding: 12px;
+            background: #40c9c0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 0 25px;
+            transition: background 0.3s;
+        }
+
+        .signin-btn:hover {
+            background: #36b5ad;
+        }
+
+        .divider-text {
+            text-align: center;
+            color: #777;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 35px;
+        }
+
+        .social-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            color: #555;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+
+        .social-btn:hover {
+            opacity: 0.8;
+        }
+
+        .social-icon {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .signup-link {
+            text-align: center;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .signup-link a {
+color: #40c9c0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <div class="signin-box">
+        <h2>Sign in</h2>
+
+        <div class="input-group">
+            <input type="email" placeholder="Email address">
+            <span class="icon">👤</span>
+        </div>
+
+        <div class="input-group">
+            <input type="password" placeholder="Password">
+            <span class="icon">🔒</span>
+        </div>
+
+        <button class="signin-btn">Sign in</button>
+        <p class="signup-link">Don't have an account yet? <a href="#">Sign up</a></p>
+    </div>
+        </form>
+    </section>
   </main>
 
   <!-- ========================================================== -->
