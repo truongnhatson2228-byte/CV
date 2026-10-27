@@ -19,3 +19,5 @@
 - Website là trang tĩnh, chưa có backend hoặc cơ sở dữ liệu.
 - Giao diện đăng nhập và đăng ký chưa xác thực tài khoản hay gửi dữ liệu.
 - Các liên kết “Xem chi tiết” và “Đăng ký” hiện chỉ mang tính minh họa.
+- Một số nội dung có thể bị tràn hoặc cắt trên màn hình nhỏ; cần kiểm tra và cải thiện bố cục mobile.
+- Đường dẫn LinkedIn chưa khớp với địa chỉ hiển thị trên trang.
