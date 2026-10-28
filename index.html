@@ -35,6 +35,10 @@
           <li><a href="#skills">Kỹ năng</a></li>
           <li><a href="#projects">Dự án</a></li>
           <li><a href="#contact">Liên hệ</a></li>
+          <div class="auth-buttons">
+                <button class="btn-login" onclick="openLogin()">Đăng nhập</button>
+                <button class="btn-register" onclick="openRegister()">Đăng ký</button>
+            </div>
         </ul>
       </nav>
     </div>
@@ -304,27 +308,314 @@ color: #40c9c0;
         .signup-link a:hover {
             text-decoration: underline;
         }
+        .auth-buttons {
+            display: flex;
+            gap: 12px;
+            margin-left: 20px;
+        }
+        .btn-login {
+            padding: 8px 20px;
+            border: 1px solid #1a56db;
+            background: transparent;
+            color: #1a56db;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .btn-login:hover {
+            background: #1a56db;
+            color: white;
+        }
+        .btn-register {
+            padding: 8px 20px;
+            background: #1a56db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .btn-register:hover {
+            background: #1545b8;
+        }
+
+        /* ===== PHẦN GIỚI THIỆU ===== */
+        .hero {
+            background: linear-gradient(135deg, #e0f0ff 0%, #2dd4d4 100%);
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 500px;
+        }
+        .hero-text h3 {
+            font-size: 16px;
+            color: #1a56db;
+            margin-bottom: 8px;
+        }
+        .hero-text h1 {
+            font-size: 48px;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        .hero-text h2 {
+            font-size: 20px;
+            color: #7c3aed;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .hero-text p {
+            color: #555;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+        .btn-primary {
+            padding: 12px 28px;
+            background: #1a56db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .btn-outline {
+            padding: 12px 28px;
+            border: 2px solid #1a56db;
+            color: #1a56db;
+            background: transparent;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .hero-image img {
+            max-width: 350px;
+            border-radius: 8px;
+        }
+
+        /* ===== KỸ NĂNG ===== */
+        .skills {
+            padding: 60px;
+            background: #2dd4d433;
+        }
+        .skills h2 {
+            font-size: 28px;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        .skills p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .tag {
+            padding: 8px 16px;
+            background: #fff;
+            border: 1px solid #1a56db;
+            color: #1a56db;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* ===== OVERLAY NỀN ĐEN ===== */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay.active {
+            display: flex;
+        }
+
+        /* ===== KHỐI ĐĂNG NHẬP / ĐĂNG KÍ ===== */
+        .auth-modal {
+            background: #fff;
+            width: 100%;
+            max-width: 420px;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+        .auth-bg {
+            background: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800') center/cover no-repeat;
+            padding: 60px 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .auth-form-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 340px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .auth-form-box h2 {
+            font-size: 17px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .auth-form-box input {
+            width: 100%;
+            padding: 9px 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        .auth-submit {
+            width: 100%;
+            background: #00a698;
+            color: white;
+            border: none;
+            padding: 9px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin: 8px 0 15px;
+        }
+        .auth-divider {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin: 8px 0;
+        }
+        .social-login {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            border: 1px solid #eee;
+            background: #fff;
+            border-radius: 3px;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .auth-switch {
+            font-size: 13px;
+            text-align: center;
+        }
+        .auth-switch a {
+            color: #00a698;
+            text-decoration: none;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .hidden-form {
+            display: none;
+        }
     </style>
-    <div class="signin-box">
-        <h2>Sign in</h2>
-
-        <div class="input-group">
-            <input type="email" placeholder="Email address">
-            <span class="icon">👤</span>
-        </div>
-
-        <div class="input-group">
-            <input type="password" placeholder="Password">
-            <span class="icon">🔒</span>
-        </div>
-
-        <button class="signin-btn">Sign in</button>
-        <p class="signup-link">Don't have an account yet? <a href="#">Sign up</a></p>
-    </div>
-        </form>
     </section>
   </main>
+<!-- ===== KHỐI ĐĂNG NHẬP & ĐĂNG KÍ ===== -->
+    <div id="authOverlay" class="overlay" onclick="closeOverlay(event)">
+        <div class="auth-modal" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeAuth()">&times;</span>
+            <div class="auth-bg">
+                <!-- FORM ĐĂNG KÍ -->
+                <div id="registerForm" class="auth-form-box">
+                    <h2>Create Account</h2>
+                    <input type="email" placeholder="Email address">
+                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Confirm password">
+                    <button class="auth-submit">Sign up</button>
+                    <div class="auth-divider">Or sign up with</div>
+                    <div class="social-login">
+                        <button class="social-btn">G</button>
+                        <button class="social-btn">f</button>
+                        <button class="social-btn">🍎</button>
+                    </div>
+                    <div class="auth-switch">
+                        I already have an account? <a href="#" onclick="switchToLogin(); return false;">Login</a>
+                    </div>
+                </div>
 
+                <!-- FORM ĐĂNG NHẬP -->
+                <div id="loginForm" class="auth-form-box hidden-form">
+                    <h2>Sign in</h2>
+                    <input type="email" placeholder="Email address">
+                    <input type="password" placeholder="Password">
+                    <button class="auth-submit">Sign in</button>
+                    <div class="auth-divider">Or sign in with</div>
+                    <div class="social-login">
+                        <button class="social-btn">G</button>
+                        <button class="social-btn">f</button>
+                        <button class="social-btn">🍎</button>
+                    </div>
+                    <div class="auth-switch">
+                        Don't have an account yet? <a href="#" onclick="switchToRegister(); return false;">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        const overlay = document.getElementById('authOverlay');
+        const registerForm = document.getElementById('registerForm');
+        const loginForm = document.getElementById('loginForm');
+
+        function openRegister() {
+            overlay.classList.add('active');
+            registerForm.classList.remove('hidden-form');
+            loginForm.classList.add('hidden-form');
+        }
+
+        function openLogin() {
+            overlay.classList.add('active');
+            loginForm.classList.remove('hidden-form');
+            registerForm.classList.add('hidden-form');
+        }
+
+        function closeAuth() {
+            overlay.classList.remove('active');
+        }
+
+        function closeOverlay(event) {
+            if (event.target === overlay) {
+                closeAuth();
+            }
+        }
+
+        function switchToLogin() {
+            registerForm.classList.add('hidden-form');
+            loginForm.classList.remove('hidden-form');
+        }
+
+        function switchToRegister() {
+            loginForm.classList.add('hidden-form');
+            registerForm.classList.remove('hidden-form');
+        }
+    </script>
   <!-- ========================================================== -->
   <!-- FOOTER                                                      -->
   <!-- ========================================================== -->
@@ -334,7 +625,6 @@ color: #40c9c0;
       <a href="#top" class="to-top">↑ Lên đầu trang</a>
     </div>
   </footer>
-
 </body>
 
 </html>
